@@ -1,18 +1,16 @@
 import binascii
 
 # Encrypted hex string
-hex_str = "0e0b213f26041e480b26217f27342e175d0e070a3c5b103e2526217f27342e175d0e077e263451150104"
+hex_str = "0xea"
 
 # Convert hex string to bytes
 encrypted_bytes = binascii.unhexlify(hex_str)
 
 # Key used for XOR encryption
-key = b"myXORkey"
+key = b"0x60"
 
 # Repeat the key to match the length of the encrypted message
 full_key = (key * (len(encrypted_bytes) // len(key) + 1))[:len(encrypted_bytes)]
-
-# XOR decryption
 
 # XOR decryption
 decrypted_bytes = bytes([b ^ k for b, k in zip(encrypted_bytes, full_key)])
