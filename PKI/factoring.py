@@ -1,0 +1,3 @@
+import sympy as sp
+n = 510143758735509025530880200653196460532653147
+print(sp.factorint(n))
